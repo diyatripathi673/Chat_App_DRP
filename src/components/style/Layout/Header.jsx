@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useState } from 'react';
-import { AppBar, Box, IconButton, Toolbar, Typography, Tooltip } from "@mui/material";
+import { AppBar, Box, IconButton, Toolbar, Typography, Tooltip, Backdrop } from "@mui/material";
 import { orange } from '../../../Constants/Color';
 import { Add as AddIcon, Logout as LogoutIcon, Menu as MenuIcon, Group as GroupIcon, Search as SearchIcon, Notifications as NotificationIcon } from "@mui/icons-material";  // Correct import for Menu icon
 import { useNavigate } from 'react-router-dom';
@@ -95,18 +95,17 @@ import { useNavigate } from 'react-router-dom';
             </Box>
 
             {isSearch && (
-                <Suspense fallback={<div>Loding...</div>}>
-                    <Search />
+                <Suspense fallback={<Backdrop open/>}>
                 </Suspense>
-            )}
+            )} <Search />
             {isNotification
                 && (
-                    <Suspense fallback={<div>Loding...</div>}>
+                <Suspense fallback={<Backdrop open/>}>
                         <Notifications />
                     </Suspense>
                 )}
             {isNewGroup && (
-                <Suspense fallback={<div>Loding...</div>}>
+                <Suspense fallback={<Backdrop open/>}>
                     <NewGroup />
                 </Suspense>
             )}

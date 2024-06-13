@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Grid ,Skeleton} from '@mui/material';
+import { Grid ,Skeleton, Stack} from '@mui/material';
 
 export const LayoutLoader=()=>{
     return(
@@ -27,6 +27,15 @@ export const LayoutLoader=()=>{
          
             }} >
          <Skeleton variant='rectangular' height={"100vh"}/>
+         <Stack spacing={"1rem"} >
+
+         {Array.from({ length: 10 }).map((_, i) => (
+           <Skeleton key={i} variant='rectangular' height={"5rem"}  />
+           ))
+           }
+           
+          </Stack>
+
           </Grid>
         </Grid></>
     )

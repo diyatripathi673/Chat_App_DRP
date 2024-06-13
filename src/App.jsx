@@ -12,7 +12,7 @@ import { LayoutLoader } from './components/style/Layout/Loader';
 let user = true;
 
 const App = () => {
-  return (
+  return ( 
     <BrowserRouter>
       <Suspense fallback={<LayoutLoader />}>
         <Routes>
