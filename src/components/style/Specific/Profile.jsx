@@ -1,5 +1,7 @@
-import { Stack, Avatar, Typography } from "@mui/material";
 import React from "react";
+import { Stack, Avatar, Typography } from "@mui/material";
+import { Face as FaceIcon, AlternateEmail as UserNameIcon, CalendarMonth as CalendarIcon } from '@mui/icons-material';
+import moment from "moment";
 
 const Profile = () => {
   return (
@@ -8,19 +10,21 @@ const Profile = () => {
         sx={{
           width: "180px",
           height: "180px",
-          objectFit: "contain", // Changed ObjectFit to objectFit
+          objectFit: "contain",
           marginBottom: "1rem",
           border: "5px solid white",
         }}
       />
-      <ProfileCard heading={"Bio"} text={"hello koko the world is yours"} />
-      <ProfileCard heading={"Bio"} text={"hello koko the world is yours"} />
+      <ProfileCard heading={"Bio"} text={"hello koko"} />
+      <ProfileCard heading={"Username"} text={"@Rahulgoswami963"} Icon={UserNameIcon} />
+      <ProfileCard heading={"Name"} text={"Rahul Goswami"} Icon={FaceIcon} />
+      <ProfileCard heading={"Joined"} text={moment( "2024-01-01").fromNow()} Icon={CalendarIcon} />
     </Stack>
   );
 };
 
 const ProfileCard = ({ text, Icon, heading }) => {
-  return ( 
+  return (
     <Stack
       direction={"row"}
       spacing={"1rem"}
@@ -28,7 +32,7 @@ const ProfileCard = ({ text, Icon, heading }) => {
       color={"white"}
       textAlign={"center"}
     >
-      {Icon && <img src={Icon} alt="icon" />}
+      {Icon && <Icon />} {/* Render the Icon component */}
 
       <Stack>
         <Typography variant="body1">{text}</Typography>
