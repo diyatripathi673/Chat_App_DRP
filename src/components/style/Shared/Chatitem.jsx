@@ -1,6 +1,7 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Avatar, Box, Stack, Typography } from "@mui/material";
 import React, { memo } from "react";
 import { Link } from "react-router-dom";
+import AvatarCard from "./AvatarCard";
 
 const Chatitem = ({
   avatar = [],
@@ -28,9 +29,15 @@ const Chatitem = ({
           color: sameSender ? "white" : "black",
           position: "relative",
           gap: "1rem",
+          ":hover": {
+            backgroundColor: "rgba(0,0,0,0.1)",
+            color: "white",
+            cursor: "pointer",
+          }
         }}
       >
-        {/* {avatar} */}
+        <AvatarCard avatar={avatar} />
+
         <Stack>
           <Typography>{name}</Typography>
           {newMessageAlert && (
