@@ -96,8 +96,9 @@ import { useNavigate } from 'react-router-dom';
 
             {isSearch && (
                 <Suspense fallback={<Backdrop open/>}>
+                    <Search />
                 </Suspense>
-            )} <Search />
+            )}
             {isNotification
                 && (
                 <Suspense fallback={<Backdrop open/>}>
