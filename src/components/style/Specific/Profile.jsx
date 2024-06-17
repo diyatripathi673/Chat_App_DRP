@@ -18,7 +18,7 @@ const Profile = () => {
       <ProfileCard heading={"Bio"} text={"hello koko"} />
       <ProfileCard heading={"Username"} text={"@Rahulgoswami963"} Icon={UserNameIcon} />
       <ProfileCard heading={"Name"} text={"Rahul Goswami"} Icon={FaceIcon} />
-      <ProfileCard heading={"Joined"} text={moment( "2024-01-01").fromNow()} Icon={CalendarIcon} />
+      <ProfileCard heading={"Joined"} text={moment("2024-01-01").fromNow()} Icon={CalendarIcon} />
     </Stack>
   );
 };
@@ -32,8 +32,7 @@ const ProfileCard = ({ text, Icon, heading }) => {
       color={"white"}
       textAlign={"center"}
     >
-      {Icon && <Icon />} {/* Render the Icon component */}
-
+      {Icon && <Icon />}
       <Stack>
         <Typography variant="body1">{text}</Typography>
         <Typography color={"grey"} variant="caption">{heading}</Typography>
